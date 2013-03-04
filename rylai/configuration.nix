@@ -75,6 +75,10 @@
   # List services that you want to enable:
 
   services.nixosManual.showManual = true;
+  services.locate.enable = true;
+
+  # enable automount for media stuff
+  services.udisks.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
