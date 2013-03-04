@@ -43,12 +43,24 @@
     ];
 
   # Select internationalisation properties.
-  i18n = { consoleFont = "lat9w-16";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
+  i18n = {
+    consoleFont = "lat2-16";
+    consoleKeyMap = "slovene";
+    defaultLocale = "sl_SI.UTF-8";
+  };
+
+  users.extraUsers.arhivar = {
+    description = "";
+    createHome = true;
+    home = "/home/arhivar";
+    group = "users";
+    extraGroups = [ "wheel" ];
+    shell = "${pkgs.zsh}/bin/zsh";
+    uid = 1010;
   };
 
   environment.systemPackages = with pkgs; [
+    zsh
     htop
     screen
     unrar
@@ -78,13 +90,13 @@
   services.locate.enable = true;
 
   # enable automount for media stuff
-  services.udisks.enable = true;
+  #services.udisks.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   # Enable audio
-  services.pulseaudio.enable = true;
+  #services.pulseaudio.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -92,14 +104,15 @@
   # Enable the X11 windowing system.
   services.xserver = {
    enable = true;
-   layout = "sl";
-   xkbOptions = "eurosign:e";
+   layout = "si";
+   xkbModel = "pc105";
+   #xkbOptions = "eurosign:e";
    displayManager.slim = {
     enable = true;
     defaultUser = "arhivar";
     autoLogin = true;
    }; 
-   desktopManager.default = "xfce";
-   desktopManager.xfce.enable = true;
+   desktopManager.default = "kde4";
+   desktopManager.kde4.enable = true;
   };
 }
