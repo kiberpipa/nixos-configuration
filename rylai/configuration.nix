@@ -60,6 +60,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    thunderbird
     zsh
     htop
     screen
