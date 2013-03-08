@@ -60,6 +60,11 @@
   };
 
   environment.systemPackages = with pkgs; [
+    x11vnc
+    ffmpeg
+    links
+    elinks
+    lynx
     thunderbird
     zsh
     htop
@@ -84,6 +89,16 @@
     vim
     joe
     gitFull
+    kde4.okular
+    kde4.ksnapshot
+    kde4.kdemultimedia
+    kde4.kwallet
+    kde4.kcalc
+    kde4.ark
+    kde4.kgpg
+    kde4.amarok
+    kde4.bangarang
+    oxygen_gtk
   ];
   # List services that you want to enable:
 
